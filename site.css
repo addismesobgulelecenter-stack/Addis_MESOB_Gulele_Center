@@ -1,0 +1,864 @@
+/* ============================================================
+   PROFESSIONAL STYLESHEET · Vehicle Requirement Verification
+   Fonts: DM Sans + Playfair Display (Google Fonts)
+   ============================================================ */
+
+/* ----- Google Fonts Import ----- */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+/* ============================================================
+   1.  ROOT VARIABLES
+   ============================================================ */
+:root {
+    /* Colors */
+    --ink: #17233a;
+    --muted: #4f5f77;
+    --surface: rgba(255, 255, 255, 0.94);
+    --line: #dce4ef;
+    --brand: #0c6a63;
+    --brand-deep: #074842;
+    --brand-light: #1a8a82;
+    --brand-glow: rgba(12, 106, 99, 0.15);
+    --accent: #f2b84b;
+    --accent-soft: #fae9c8;
+    --danger: #d97c2b;
+    --danger-bg: rgba(217, 124, 43, 0.08);
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px rgba(10, 39, 60, 0.06);
+    --shadow-md: 0 8px 30px rgba(10, 39, 60, 0.12);
+    --shadow-lg: 0 18px 55px rgba(10, 39, 60, 0.18);
+    --shadow-xl: 0 28px 64px rgba(10, 39, 60, 0.22);
+    --shadow-glow: 0 10px 40px rgba(12, 106, 99, 0.25);
+
+    /* Borders */
+    --border-light: rgba(255, 255, 255, 0.6);
+    --border-subtle: rgba(0, 0, 0, 0.05);
+
+    /* Radius */
+    --radius-sm: 10px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --radius-xl: 32px;
+    --radius-full: 9999px;
+
+    /* Transitions */
+    --transition-fast: 0.15s ease;
+    --transition-med: 0.25s ease;
+    --transition-slow: 0.4s ease;
+
+    /* Typography */
+    --font-sans: 'DM Sans', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+}
+
+/* ============================================================
+   2.  RESET & BASE
+
+/* ============================================================
+   3.  PAGE WRAPPER
+   ============================================================ */
+
+/* ============================================================
+   4.  MAIN CONTAINER (Glass Card)
+   ============================================================ */
+/* ============================================================
+   5.  TYPOGRAPHY
+   ============================================================ */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* ---- Dropdown Button ---- */
+.dropbtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    width: auto;
+    margin: 0;
+    padding: 0.85rem 1.4rem;
+    color: #fff;
+    background: var(--brand) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-glow);
+    font: 700 0.92rem var(--font-sans);
+    letter-spacing: 0.01em;
+    cursor: pointer;
+    transition: transform var(--transition-fast), background var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.dropbtn i {
+    color: #fff !important;
+    font-size: 1.1rem;
+}
+
+.dropbtn::after {
+    content: '▾';
+    font-size: 0.8rem;
+    margin-left: 4px;
+    opacity: 0.7;
+    transition: transform var(--transition-fast);
+}
+
+.dropbtn:hover,
+.dropdown.is-open .dropbtn {
+    background: var(--brand-deep) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 14px 32px rgba(0, 50, 50, 0.35);
+}
+
+.dropdown.is-open .dropbtn::after {
+    transform: rotate(180deg);
+}
+
+/* ---- Dropdown Content ---- */
+.dropdown-content,
+.dropdown-menu {
+    display: none;
+    list-style: none;
+    margin: 10px 0 0;
+    padding: 8px;
+    min-width: 280px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    background: #ffffff !important;
+    box-shadow: var(--shadow-lg);
+    z-index: 30;
+}
+
+.dropdown-content {
+
+    position: absolute;
+    left: 0;
+    top: 100%;
+    animation: dropdownSlide 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.dropdown.is-open>.dropdown-content,
+.dropdown:hover>.dropdown-content {
+    display: block;
+}
+
+.dropdown-content li {
+  
+
+    list-style: none;
+    margin: 0;
+}
+
+/* ---- Dropdown Links ---- */
+.dropdown-content a,
+.dropdown-menu a {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.72rem 0.9rem;
+    color: var(--ink) !important;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background var(--transition-fast), color var(--transition-fast), transform var(--transition-fast), padding var(--transition-fast);
+}
+
+.dropdown-content a i,
+.dropdown-menu a i {
+    width: 1.5rem;
+    text-align: center;
+   
+    font-size: 1rem;
+}
+
+.dropdown-content a:hover,
+.dropdown-content a:focus-visible,
+.dropdown-menu a:hover {
+    color: var(--brand-deep) !important;
+    background: #eaf6f3;
+    transform: translateX(4px);
+    padding-left: 1.1rem;
+    outline: none;
+}
+
+/* ---- Submenu ---- */
+.dropdown-submenu {
+    position: relative;
+    display: block !important;
+}
+
+.dropdown-submenu .dropdown-menu {
+    position: absolute;
+    left: calc(100% + 8px);
+    top: -8px;
+    min-width: 240px;
+}
+
+.dropdown-submenu:hover>.dropdown-menu,
+.dropdown-submenu:focus-within>.dropdown-menu,
+.dropdown-submenu.is-open>.dropdown-menu {
+    display: block;
+    animation: dropdownSlide 0.18s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Submenu arrow indicator */
+.submenu-arrow {
+    margin-left: auto;
+    font-size: 0.75rem;
+    color: #7f9bb5;
+    transition: transform var(--transition-fast);
+}
+
+.dropdown-submenu.is-open .submenu-arrow {
+    transform: rotate(90deg);
+}
+
+/* ---- Responsive Dropdown (Mobile) ---- */
+@media (max-width: 720px) {
+    .dropdown-content {
+        position: fixed;
+        left: 14px;
+        right: 14px;
+        top: 70px;
+        min-width: 0;
+        max-height: calc(100vh - 90px);
+        overflow-y: auto;
+        border-radius: var(--radius-md);
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .dropdown-submenu .dropdown-menu {
+        position: static;
+        margin: 4px 0 4px 12px;
+        min-width: 0;
+        box-shadow: none;
+        border-color: #e7edf2;
+        border-radius: var(--radius-sm);
+        background: #f8fafc !important;
+    }
+
+    .dropdown-submenu .dropdown-menu a {
+        padding-left: 1.5rem;
+    }
+}
+
+/* ============================================================
+   8.  DOCUMENT LIST
+   ============================================================ */
+ul:not(.dropdown-content):not(.dropdown-menu) {
+    padding: 0;
+    margin: 1rem 0;
+    list-style: none;
+    display: grid;
+    gap: 0.75rem;
+}
+
+ul:not(.dropdown-content):not(.dropdown-menu)>li {
+    position: relative;
+    padding: 1rem 1rem 1rem 3.2rem;
+    color: #31415b !important;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    background: rgba(248, 250, 252, 0.8);
+    backdrop-filter: blur(4px);
+    transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+    font-weight: 500;
+    cursor: default;
+}
+
+ul:not(.dropdown-content):not(.dropdown-menu)>li::before {
+    content: '✓';
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: grid;
+    place-items: center;
+    width: 1.4rem;
+    height: 1.4rem;
+    border-radius: 50%;
+    background: #d9f0eb;
+    color: var(--brand);
+    font-weight: 700;
+    font-size: 0.75rem;
+    transition: transform var(--transition-fast);
+}
+
+ul:not(.dropdown-content):not(.dropdown-menu)>li:hover {
+    transform: translateY(-2px);
+    border-color: #a9d6ce;
+    box-shadow: 0 9px 24px rgba(15, 86, 90, 0.08);
+    background: rgba(255, 255, 255, 0.9);
+}
+
+ul:not(.dropdown-content):not(.dropdown-menu)>li:hover::before {
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* ============================================================
+   9.  IMAGES
+   ============================================================ */
+
+img:hover {
+    transform: scale(1.01);
+    box-shadow: 0 12px 32px rgba(12, 39, 64, 0.18);
+}
+
+/* ---- Image Grid ---- */
+.img-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem 2.5rem;
+    justify-content: center;
+    margin: 0.5rem 0 1.2rem 0;
+}
+
+.img-card {
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: var(--radius-md);
+    padding: 0.8rem 1rem 0.6rem 1rem;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    text-align: center;
+    transition: transform var(--transition-med), box-shadow var(--transition-med), border-color var(--transition-med);
+    flex: 0 1 auto;
+    min-width: 140px;
+}
+
+.img-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 36px rgba(0, 40, 80, 0.10);
+    border-color: rgba(12, 106, 99, 0.15);
+    background: rgba(255, 255, 255, 0.75);
+}
+
+.img-card img {
+    margin: 0 auto 0.2rem !important;
+    border-radius: var(--radius-sm);
+    max-height: 160px;
+    object-fit: contain;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.img-card img:hover {
+    transform: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.img-caption {
+    margin-top: 0.4rem;
+    font-size: 0.85rem;
+    color: #1f4a6e;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.img-caption i {
+    color: #527a9e !important;
+    font-size: 0.9rem;
+}
+
+/* ---- Image Caption (center) ---- */
+center p,
+img+center p {
+    text-align: center;
+    font-size: 0.88rem;
+    color: var(--muted);
+    margin-top: 0.3rem;
+    font-weight: 450;
+}
+
+/* ============================================================
+   10. WARNING BOX
+   ============================================================ */
+.warning-box {
+    background: rgba(255, 245, 235, 0.7);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: var(--radius-md);
+    padding: 1.4rem 2rem;
+    margin: 2rem 0 0.2rem 0;
+    border-left: 6px solid var(--danger);
+    border: 1px solid rgba(217, 124, 43, 0.12);
+    box-shadow: var(--shadow-sm);
+    transition: background var(--transition-med), box-shadow var(--transition-med);
+}
+
+.warning-box:hover {
+    background: rgba(255, 245, 235, 0.85);
+    box-shadow: var(--shadow-md);
+}
+
+.warning-box h4 {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: #a85d1a;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 !important;
+}
+
+.warning-box h4 i {
+    color: var(--danger) !important;
+    font-size: 1.6rem;
+}
+
+.warning-box p {
+    color: #2f4a66;
+    font-size: 1rem;
+    margin-top: 0.4rem;
+    padding-left: 2.8rem;
+    font-weight: 430;
+}
+
+/* ============================================================
+   11. ICONS
+   ============================================================ */
+i {
+   
+}
+
+/* ============================================================
+   12. BUTTONS (non-dropdown)
+   ============================================================ */
+button:not(.dropbtn) {
+    background: var(--brand) !important;
+    color: #fff;
+    border: none;
+    border-radius: var(--radius-sm);
+    padding: 0.75rem 1.5rem;
+    font-weight: 700;
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: transform var(--transition-fast), background var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+button:not(.dropbtn):hover {
+    background: var(--brand-deep) !important;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+}
+
+/* ============================================================
+   13. ANIMATIONS
+   ============================================================ */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes dropdownSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-8px) scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ============================================================
+   14. RESPONSIVE
+   ============================================================ */
+@media (max-width: 720px) {
+    body {
+        padding: 14px;
+        background-attachment: scroll;
+    }
+
+    .container {
+        margin-top: 14px !important;
+        border-radius: var(--radius-md) !important;
+        padding: 1.5rem 1rem !important;
+    }
+
+    .container::before {
+        border-radius: var(--radius-md) var(--radius-md) 0 0;
+    }
+
+    h2 {
+        font-size: clamp(1.4rem, 5vw, 1.8rem) !important;
+        flex-wrap: wrap;
+    }
+
+    h3 {
+        font-size: 1.2rem !important;
+    }
+
+    .badge-soft {
+        font-size: 0.75rem;
+        padding: 0.2rem 1.2rem;
+        white-space: normal;
+    }
+
+    ul:not(.dropdown-content):not(.dropdown-menu)>li {
+        padding: 0.8rem 0.8rem 0.8rem 2.8rem;
+        font-size: 0.95rem;
+    }
+
+    ul:not(.dropdown-content):not(.dropdown-menu)>li::before {
+        width: 1.2rem;
+        height: 1.2rem;
+        left: 0.8rem;
+        font-size: 0.65rem;
+    }
+
+    .img-grid {
+        gap: 1rem;
+    }
+
+    .img-card {
+        min-width: 100px;
+        padding: 0.6rem;
+    }
+
+    .img-card img {
+        max-height: 120px;
+    }
+
+    .warning-box {
+        padding: 1rem 1.2rem;
+    }
+
+    .warning-box p {
+        padding-left: 0.5rem;
+        font-size: 0.95rem;
+    }
+
+    .warning-box h4 {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .dropbtn {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.85rem;
+    }
+
+    .dropbtn i {
+        font-size: 0.95rem;
+    }
+
+    .container {
+        padding: 1rem 0.8rem !important;
+    }
+
+    ul:not(.dropdown-content):not(.dropdown-menu) {
+        gap: 0.5rem;
+    }
+
+    ul:not(.dropdown-content):not(.dropdown-menu)>li {
+        font-size: 0.88rem;
+        padding: 0.7rem 0.7rem 0.7rem 2.4rem;
+    }
+}
+
+/* ============================================================
+   15. REDUCED MOTION
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    html {
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ============================================================
+   16. UTILITY HELPERS
+   ============================================================ */
+.text-center {
+    text-align: center;
+}
+
+.mt-1 {
+    margin-top: 0.5rem;
+}
+.mt-2 {
+    margin-top: 1rem;
+}
+.mt-3 {
+    margin-top: 1.5rem;
+}
+.mt-4 {
+    margin-top: 2rem;
+}
+
+.mb-1 {
+    margin-bottom: 0.5rem;
+}
+.mb-2 {
+    margin-bottom: 1rem;
+}
+.mb-3 {
+    margin-bottom: 1.5rem;
+}
+
+.flex {
+    display: flex;
+}
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.flex-wrap {
+    flex-wrap: wrap;
+}
+.gap-1 {
+    gap: 0.5rem;
+}
+.gap-2 {
+    gap: 1rem;
+}
+.gap-3 {
+    gap: 1.5rem;
+}
+
+/* ============================================================
+   END OF STYLESHEET
+   ============================================================ */
+
+/* Reference-style document view used by aa.html. */
+.requirement-view {
+    display: block;
+    min-height: 100vh;
+    padding: 86px 44px 96px;
+    background: #f4f6fb;
+    color: #2e3c56;
+}
+
+.requirement-view::after { display: none; }
+
+.requirement-view > .dropdown {
+    position: absolute;
+    top: 26px;
+    left: 50%;
+    z-index: 20;
+    transform: translateX(-50%);
+}
+
+.requirement-view .dropbtn {
+    min-width: 127px;
+    min-height: 60px;
+    justify-content: center;
+    padding: 0.8rem 1.1rem;
+    border-radius: 12px;
+    box-shadow: 0 12px 24px rgba(5, 66, 62, 0.24);
+}
+
+.requirement-view .container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: min(1098px, 100%);
+    max-width: none !important;
+    min-height: 870px;
+    margin: 0 auto !important;
+    padding: 64px 178px 96px !important;
+    overflow: visible;
+    border: 1px solid #087a73;
+    border-radius: 21px !important;
+    background: #fff !important;
+    box-shadow: 0 14px 34px rgba(21, 41, 68, 0.10);
+}
+
+.requirement-view .container::before,
+.requirement-view .container::after { display: none; }
+
+.requirement-view .container h2,
+.requirement-view .container h3,
+.requirement-view .container h4,
+.requirement-view .container ul,
+.requirement-view .container li,
+.requirement-view .container center,
+.requirement-view .container > p {
+    grid-column: 1 / -1;
+}
+
+.requirement-view .container h2,
+.requirement-view .container h3,
+.requirement-view .container h4 {
+    font-family: var(--font-sans);
+}
+
+.requirement-view .container h2 {
+    margin: 0 0 0.6rem !important;
+    color: #079284 !important;
+    font-size: 1.1rem !important;
+    font-weight: 700;
+    letter-spacing: 0;
+}
+
+.requirement-view .container h3 {
+    margin: 0 0 0.45rem !important;
+    color: #079284 !important;
+    font-size: 1.02rem !important;
+    font-weight: 700;
+}
+
+.requirement-view .container ul:not(.dropdown-content):not(.dropdown-menu) {
+    display: contents;
+    margin: 0;
+    padding: 0 0 0 1.2rem;
+    list-style: disc;
+}
+
+.requirement-view .container ul:not(.dropdown-content):not(.dropdown-menu) > li {
+    display: list-item;
+    margin: 0 0 0.58rem;
+    padding: 0;
+    color: #34415a !important;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    font-weight: 400;
+    line-height: 1.45;
+}
+
+.requirement-view .container ul:not(.dropdown-content):not(.dropdown-menu) > li::before { display: none; }
+.requirement-view .container ul:not(.dropdown-content):not(.dropdown-menu) > li:hover { transform: none; box-shadow: none; background: transparent; }
+
+.requirement-view .container center {
+    display: contents;
+}
+
+.requirement-view .container center p {
+    grid-column: 1 / -1;
+    margin: 0.15rem 0 0.55rem;
+    color: #2e3c56;
+    font-size: 0.98rem;
+    text-align: center;
+}
+
+.requirement-view .container h4 {
+    order: 2;
+    margin: 2.2rem 0 1.45rem !important;
+    color: #36445b !important;
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.45;
+}
+
+.requirement-view .container ul > img,
+.requirement-view .container ul > p {
+    width: 100% !important;
+    height: 194px !important;
+    margin: 0 !important;
+    overflow: hidden;
+    border: 1px solid #d7dde7;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.requirement-view .container ul > img,
+.requirement-view .container ul > p {
+    order: 3;
+}
+
+.requirement-view .container ul > p > img {
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 !important;
+    object-fit: cover;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.requirement-view .container ul > img {
+    object-fit: cover;
+    object-position: center;
+}
+
+.requirement-view .container ul > img:hover,
+.requirement-view .container ul > p > img:hover { transform: none; box-shadow: none; }
+
+.requirement-view .page-actions {
+    position: fixed;
+    bottom: 12px;
+    left: max(22px, calc((100vw - 1098px) / 2 + 60px));
+    z-index: 10;
+    display: flex;
+    gap: 16px;
+}
+
+.requirement-view .page-actions a,
+.requirement-view .page-actions button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60px;
+    padding: 0.85rem 1.2rem;
+    color: #fff;
+    border-radius: 15px;
+    font: 700 1rem var(--font-sans);
+    text-decoration: none;
+}
+
+.requirement-view .page-actions .return-home { background: #ff5b05; }
+.requirement-view .page-actions .close-page { min-width: 186px; margin: 0; border: 2px solid #172f32; background: #0a9d94 !important; }
+
+/* Navigation actions shared by every service page. */
+body:not(.requirement-view) .page-actions {
+    position: fixed;
+    z-index: 40;
+    right: clamp(16px, 3vw, 42px);
+    bottom: clamp(16px, 3vw, 32px);
+    display: flex;
+    gap: 12px;
+}
+
+body:not(.requirement-view) .page-actions a,
+body:not(.requirement-view) .page-actions button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0.7rem 1rem;
+    color: #fff;
+    border-radius: 12px;
+    font: 700 0.9rem var(--font-sans);
+    text-decoration: none;
+    box-shadow: 0 8px 22px rgba(8, 27, 45, 0.26);
+}
+
+body:not(.requirement-view) .page-actions .return-home { background: #ff5b05; }
+body:not(.requirement-view) .page-actions .close-page { margin: 0; border: 2px solid #fff; background: #0a9d94 !important; }
+
+@media (max-width: 800px) {
+    .requirement-view { padding: 74px 16px 86px; }
+    .requirement-view .container { min-height: auto; padding: 48px 22px 74px !important; }
+    .requirement-view .container ul > img, .requirement-view .container ul > p { height: 138px !important; }
+    .requirement-view .page-actions { left: 16px; gap: 10px; }
+    .requirement-view .page-actions a, .requirement-view .page-actions button { min-height: 50px; padding: 0.65rem 0.8rem; font-size: 0.83rem; }
+    .requirement-view .page-actions .close-page { min-width: 110px; }
+}

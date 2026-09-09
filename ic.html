@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Addis Mesob Gulele</title>
+<link rel="stylesheet" href="site.css">
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    background-image: url('Mesob.png');
+    background-attachment: fixed;
+    padding:30px;
+    background-size: cover;
+}
+
+.container{
+    max-width:800px;
+    padding:25px;
+    margin:auto;
+    border-radius:12px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+h2{
+    text-align:center;
+    margin-bottom:20px;
+    color: white;
+}
+h3{
+    text-align:center;
+    margin-bottom:20px;
+    color: white;
+}
+
+li{
+    color: white;
+}
+h4{
+    color: white;
+}
+i{
+    color: white;
+}
+p{
+
+    margin-bottom: 20px;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  dth: 50%; /* Optional: set a width so centering is visible */
+}
+
+input,
+select{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:16px;
+    box-sizing:border-box;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    margin-top:15px;
+    border:none;
+    background:green;
+    color:white;
+    font-size:16px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:darkgreen;
+}
+
+#result{
+    margin-top:20px;
+    padding:15px;
+    border-radius:8px;
+    background:#f7f7f7;
+}
+
+.success{
+    color:green;
+    font-weight:bold;
+}
+
+.error{
+    color:red;
+    font-weight:bold;
+}
+
+.warning{
+    color:orange;
+    font-weight:bold;
+}
+
+.info{
+    color:blue;
+    font-weight:bold;
+}
+
+.date-box{
+    display:flex;
+    gap:10px;
+}
+
+.date-box input{
+    flex:1;
+}
+
+.dropbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+.dropdown-submenu a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropdown-submenu {display: block;}
+.dropdown-submenu:hover .dropdown-menu {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+.dropdown-submenu {
+  display: none;
+  position: relative;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-submenu .dropdown-menu {
+   display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+   top: 0;
+  left: 100%;
+  margin-top: -1px;
+}
+
+</style>
+</head>
+
+<body>
+
+ <section id="top"></section>
+ 
+   <div class="dropdown">
+  <button class="dropbtn">የስራ ክፍሎች</button>
+  <div class="dropdown-content">
+
+     <li class="dropdown-submenu">
+        <a class="test" tabindex="-1" href="Home.html">HOME <span class="caret"></span></a>
+      </li>
+    
+    <li class="dropdown-submenu">
+        <a class="test" tabindex="-1" href="#">አሽከርካሪ ተሽከርካሪ ባለስልጣን <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a tabindex="-1" href="aa.html">መንጃ ፍቃድ እድሳት</a></li>
+          <li><a tabindex="-1" href="ab.html">ቦሎ እድሳት</a></li>
+          <li><a tabindex="-1" href="ac.html">መንጃ ፍቃድ ኢንተርናሽናል ለማድረግ</a></li>
+        </ul>
+      </li>
+
+       <li class="dropdown-submenu">
+        <a class="test" tabindex="-1" href="#">የሲቪል ምዝገባና ነዋሪዎች አገልግሎት ኤጀንሲ <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a tabindex="-1" href="bb.html">የነዋሪነት መታወቂያ እርማት እድሳት አገልግሎት</a></li>
+          <li><a tabindex="-1" href="bc.html">የልደት ምዝገባ አገልግሎት</a></li>
+          <li><a tabindex="-1" href="bd.html">ወሳኝ ኩነት ማረጋገጥ</a></li>
+          <li><a tabindex="-1" href="be.html">የፍቺ ምዝገባ</a></li>
+          <li><a tabindex="-1" href="bf.html">ያላገባ እድሳት አገልግሎት  </a></li>
+          <li><a tabindex="-1" href="bg.html">የሞት ምዝገባ አገልግሎት</a></li>
+          <li><a tabindex="-1" href="bh.html">ያላገባ ማስረጃ አገልግሎት </a></li>
+        </ul>
+      </li>
+
+       <li class="dropdown-submenu">
+        <a class="test" tabindex="-1" href="#">ቤቶች ልማትና አስተዳደር ቢሮ <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a tabindex="-1" href="ca.html">አከራይ ተከራይ ዉል</a></li>
+        </ul>
+      </li>
+
+       <li class="dropdown-submenu">
+        <a class="test" tabindex="-1" href="#">የገቢዎች ቢሮ<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a tabindex="-1" href="da.html">የግለሰብ ግብር ከፋይ መለያ ቁጥር</a></li>
+          <li><a tabindex="-1" href="db.html">የሰራተኛ ግብር ከፋይ መለያ ቁጥር</a></li>
+          <li><a tabindex="-1" href="dc.html">የተማሪ ግብር ከፋይ መለያ ቁጥር</a></li>
+          <li><a tabindex="-1" href="dd.html">የሽርክና ግብር ከፋይ መለያ ቁጥር</a></li>
+          <li><a tabindex="-1" href="de.html">የንግድ ግብር ከፋይ መለያ ቁጥር</a></li>
+          <li><a tabindex="-1" href="df.html">የአሽከርካሪ ግብር ከፋይ መለያ ቁጥር</a></li>
+        </ul>
+      </li>
+
+       <li class="dropdown-submenu">
+        <a class="test" tabindex="-1" href="#">የንግድ ቢሮ <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a tabindex="-1" href="ea.html">የግለሰብ ቅድመ አካውንት ማፅደቅ</a></li>
+          <li><a tabindex="-1" href="eb.html">የማህበራት ቅድመ አካውንት ማፅደቅ </a></li>
+          <li><a tabindex="-1" href="ec.html">የንግድ ማህበራት የንግድ ድርጅት ስም ማስመዝገብ</a></li>
+          <li><a tabindex="-1" href="ed.html">የንግድ ማህበራት የንግድ ድርጅት ስም ማሻሻል </a></li>
+          <li><a tabindex="-1" href="ee.html">የግለሰብ ነጋዴና የንግድ ማህበራት የንግድ ምዝገባ ምስክር ወረቀት መስጠት</a></li>
+          <li><a tabindex="-1" href="ef.html">የንግድ ምዝገባ የምስክር ወረቀት ማሻሻል </a></li>
+          <li><a tabindex="-1" href="eg.html">ምትክ የንግድ ምዝገባ የምስክር ወረቀት መስጠት </a></li>
+          <li><a tabindex="-1" href="eh.html">የንግድ ምዝገባ ስረዛ አገልግሎት መስጠት </a></li>
+          <li><a tabindex="-1" href="ei.html">ለግለሰብ ነጋዴና ለንግድ ማህበራት የንግድ ሥራ ፈቃድ ምስክር ወረቀት መሰጠት</a></li>
+          <li><a tabindex="-1" href="ej.html">የንግድ ሥራ ፈቃድ የምስክር ወረቀት ማሻሻል </a></li>
+          <li><a tabindex="-1" href="ek.html">የንግድ ሥራ ፈቃድ የምስክር ወረቀት እድሳት አገልግሎት መስጠት </a></li>
+          <li><a tabindex="-1" href="el.html">ምትክ የንግድ ሥራ ፈቃድ የምስክር ወረቀት መስጠት </a></li>
+          <li><a tabindex="-1" href="em.html">የንግድ ሥራ ፈቃድ የምስክር ወረቀት ስረዛ አገልግሎት መስጠት </a></li>
+          <li><a tabindex="-1" href="en.html">የንግድ ስም ምዝገባ ምስክር ወረቀት መስጠት </a></li>
+          <li><a tabindex="-1" href="eo.html">ምትክ የንግድ ስም ምስክር ወረቀት መስጠት </a></li>
+          <li><a tabindex="-1" href="ep.html">የንግድ ስም ምስክር ወረቀት ማሻሻል </a></li>
+        </ul>
+      </li>
+     
+       <li class="dropdown-submenu">
+        <a class="test" tabindex="-1" href="#">ግንባታ ፍቃድና ቁጥጥር ባለስልጠን <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a tabindex="-1" href="ga.html">አዲስ ግንባታ ፈቃድ መስጠት</a></li>
+          <li><a tabindex="-1" href="gb.html">ዲጂታል ማስታወቂያ ፈቃድ አገልግሎት </a></li>
+          <li><a tabindex="-1" href="gc.html">ፕላን ስምምነት መረጃ መስጠት አገልግሎት </a></li>
+        </ul>
+      </li>
+       <li class="dropdown-submenu">
+        <a class="test" tabindex="-1" href="#">የትራፊክ ማኔጅመንት ባለስልጠን  <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a tabindex="-1" href="ha.html">የተሃድሶ ስልጠና የሚወስዱ አሽከርካሪዎችን ማስተላለፍ</a></li>
+          <li><a tabindex="-1" href="hb.html">የትራፊክ ደንብ ተላላፊዎች የአሽከርካሪነት ብቃት ማረጋገጫ ሪከርድ ማጣራት አገልግሎት </a></li>
+          <li><a tabindex="-1" href="hc.html">ለመንጃ ፈቃድ ወይም ለአሽከርካሪነት ብቃት ማረጋገጫ እድሳት ከአደጋ ነፃ መረጃ መስጠት</a></li>
+        </ul>
+      </li>
+      <li class="dropdown-submenu">
+        <a class="test" tabindex="-1" href="#">የኢትዮጲያ ፖስታ <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a tabindex="-1" href="ia.html">መንገድ ፈንድ </a></li>
+          <li><a tabindex="-1" href="ib.html">ብሔራዊ መታወቂያ ቀጠሮ ለማስያዝ  </a></li>
+          <li><a tabindex="-1" href="ic.html">ብሔራዊ መታወቂያ ድጋሚ ህትመት   </a></li>
+          <li><a tabindex="-1" href="id.html">የዉል ጽህፈት አገልግሎት  </a></li>
+        </ul>
+      </li>
+      <li class="dropdown-submenu">
+        <a class="test" tabindex="-1" href="#">ፕላንና ልማት ቢሮ <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a tabindex="-1" href="ja.html">የፕላን ማብራሪያ አስተያየት መስጠት</a></li>
+          <li><a tabindex="-1" href="jb.html">የውስጥ ለውስጥ መንገድ ጥናት </a></li>
+          <li><a tabindex="-1" href="jc.html">የፕላን መረጃዎችን ማሰራጨት </a></li>
+        </ul>
+      </li>
+      <li class="dropdown-submenu">
+        <a class="test" tabindex="-1" href="#">ብሔራዊ መታወቂያ <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a tabindex="-1" href="ka.html">የፋይዳ መታወቂያ ምዝገባ</a></li>
+          <li><a tabindex="-1" href="kb.html">የፋይዳ መታወቂያ ማስተካከያ </a></li>
+        </ul>
+      </li>
+      <li class="dropdown-submenu">
+        <a class="test" tabindex="-1" href="#">የስራና ክህሎት ቢሮ <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a tabindex="-1" href="la.html">የመረጃ ምክርና ግንዛቤ አገልግሎት መስጠት</a></li>
+          <li><a tabindex="-1" href="lb.html">ስራ ፈላጊዎችን እና ኢንተርፕራይዞችን መመዝገብ </a></li>
+        </ul>
+      </li>
+      <li class="dropdown-submenu">
+        <a class="test" tabindex="-1" href="#">የኢትዮጵያ ኤሌክትሪክ አገልግሎት <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a tabindex="-1" href="ma.html">የካርድ አገልግሎት</a></li>
+        </ul>
+      </li>
+
+
+  </div>
+</div>
+
+<div style="text-align: right;">
+  <a href="#botom"  style=" color: white; margin: 20px 20px;  border-radius: 3px; font-size: 18px; border: 2px solid #FFB6C1; background-color: green; font-weight: bold; padding: 8px 12px; text-decoration: none;"> ወደ መጨረሻ </a>
+</div>
+
+
+<div class="container">
+
+<h2>የኢትዮጲያ ፖስታ</h2>
+<h3>ብሔራዊ መታወቂያ ድጋሚ ህትመት</h3>
+<h3>የሚያስፈልጉ ሰነዶች</h3>
+<ul>
+  <li>ፋይዳው ኦርጅናል ከሆነ ማለትም ከኢትዮ ፖስት ወይም ከቴሌ የወጣ ከሆነና ከጠፋ የፖሊስ ማስረጃ ይዞ መገኘት ያስፈልጋል </li>
+  <li>ማስተካከያ አድርገው ከሆነ ከዚህ በፊት ያወጡት የፋይዳ መታወቂያ ኦርጅናል ከሆነ ያወጡትን መታወቂያ ይዘው መገኘት አለባቸው </li>
+  <li>ከዚህ በፊት ኦርጅናል አውጥተው ተበላሽቶ /Damaged/ ከሆነ የተበላሸውን ፋይዳ ይዘው መገኘት አለባቸው </li>
+  <li>ከዚህ በፊት ያወጡት ፋይዳ ኮፒ/Copy ከሆነ በተመዘገቡበት ስልክ ቁጥር ብቻ መገልገል ይችላሉ </li>
+
+</ul>
+
+
+</div>
+
+<div style="text-align: right;">
+  <a href="#top"  style=" color: white; margin: 20px 20px;  border-radius: 3px; font-size: 18px; border: 2px solid #FFB6C1; background-color: green; font-weight: bold; padding: 8px 12px; text-decoration: none;"> ወደ መጀመሪያ </a>
+</div>
+<section id="botom"></section>
+
+</body>
+</html>
